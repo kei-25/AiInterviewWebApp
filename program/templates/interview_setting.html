@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>面接設定</title>
+    <link rel="stylesheet" href="../static/css/setting.css"/>
+    <script src="../static/javascript/setting.js"></script>
+</head>
+<body>
+    <div class="main">
+        <h1>設定</h1>
+        <form action="/main-disp">
+            <button type="submit" name="name" class="back">メイン画面へ</button>
+        </form>
+        <form id="setting-data-send" action="ai-interview" method="post">
+            <div class="toggle-div">
+                <h1>質問の読み上げ　　　　　　　　OFF　　　　ON</h1>
+                <label class="toggle-button-1">
+                    <input type="checkbox" name="toggleSwitches" value="1"/>
+                </label>
+            </div>
+            <div class="toggle-div">
+                <h1>　　　回答入力方式　　　　キーボード入力　　　　マイク入力</h1>
+                <label class="toggle-button-1">
+                    <input type="checkbox" name="toggleSwitches" value="2"/>
+                </label>
+            </div>
+            <div class="toggle-div">
+                <h1>回答から質問を生成　　　　　　  OFF　　　　ON</h1>
+                <label class="toggle-button-1">
+                    <input type="checkbox" name="toggleSwitches" id="toggle-generat" onclick="quest_num_check_generat()" value="3"/>
+                </label>
+            </div>
+            <div class="note-1">※ONにした場合、設定した出題数の2倍が出題されます</div>
+            <br><br>
+            <h1>ジャンルを選択</h1>
+            <div class="note-3">※チェックを入れた項目からランダムに質問が選択されます</div>
+            <div class="genre-group">
+                <label class="genre1"><input type="checkbox" name="genre" class="genre-check" value="自己紹介・基本情報">自己紹介・基本情報</label>
+                <label class="genre2"><input type="checkbox" name="genre" class="genre-check" value="志望動機・企業分析">志望動機・企業分析</label>
+                <label class="genre3"><input type="checkbox" name="genre" class="genre-check" value="長所・短所">長所・短所</label><br>
+                <label class="genre1"><input type="checkbox" name="genre" class="genre-check" value="ガクチカ">ガクチカ</label>
+                <label class="genre2"><input type="checkbox" name="genre" class="genre-check" value="専門知識・スキル">専門知識・スキル</label>
+                <label class="genre3"><input type="checkbox" name="genre" class="genre-check" value="チームワーク・コミュニケーション">チームワーク・コミュニケーション</label><br>
+                <label class="genre1"><input type="checkbox" name="genre" class="genre-check" value="将来・キャリアビジョン">将来・キャリアビジョン</label>
+                <label class="genre2"><input type="checkbox" name="genre" class="genre-check" value="時事">時事</label>
+                <label class="genre3"><input type="checkbox" name="genre" class="genre-check" value="思考力">思考力</label><br>
+                <label class="genre1"><input type="checkbox" name="genre" class="genre-check" value="他社の選考状況">他社の選考状況</label>
+                <label class="genre2"><input type="checkbox" name="genre" class="genre-check" value="業種特異の質問">業種特異の質問</label>
+            </div>
+            <h1>質問を選択</h1>
+            <div class="note-2">※ジャンル選択より優先されます</div>
+            <div class="quest-list-box">
+                {% for i in range(list_len)%}
+                <label>
+                <div class="quest-set">
+                    <input type="checkbox" name="quest" value="{{qid_list[i]}}" class="quest-checkbox">　{{quest_data[i]}}
+                </div>
+                </label>
+                {% endfor %}
+            </div>
+        <div class="quest-num-div">
+            <div class="note-4">質問の回数(1～10)※回答から質問を生成をONにした場合は1～5</div>
+            <button type="button" class="quest-num-btn minus" id="minus" onclick="num_minus()">-</button>
+            <input type="number" id="quest-num" name="quest-num" class="quest-num" value="5" min="1" max="10" oninput="num_check()">
+            <button type="button" class="quest-num-btn plus" id="plsu" onclick="num_plus()">+</button>
+        </div>
+        </form>
+        <p id="error-message" class="error-message">{{error_message}}</p>
+        <button type="submit" class="interview-start-btn" onclick="quest_num_check()">面接開始</button>
+    </div>
+</body>
+</html>

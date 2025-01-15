@@ -1,0 +1,21 @@
+.header{
+    text-align: center;
+}
+
+.back{
+    position: relative;
+    top: -80px;
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    margin: 20px;
+    background-color: rgb(67, 67, 255);
+}
+.back:hover{
+    background-color: rgb(35, 35, 220);
+}
+.back:active{
+    background-color: rgb(67, 67, 255);
+}

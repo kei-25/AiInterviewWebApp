@@ -1,0 +1,15 @@
+以下の変数に入る文字列は伏字にしています。
+web_app_main.py
+| app.secret_key
+
+db_connector.py
+| HOST
+| USER
+| PASSWD
+| DB
+
+ai.connector.py
+| openai.api_key
+
+このwebアプリはチームで開発し、私は主にバックエンド(python,javascript)の作成とDBの設計・実装を担当しました。
+gpt-4o-miniとAmazon RDSは稼働に料金が発生するのでAPIKeyは伏字にし、インスタンスは停止しています。

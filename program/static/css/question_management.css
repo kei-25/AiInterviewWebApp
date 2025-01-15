@@ -1,0 +1,113 @@
+.main{
+position: relative;
+left:  200px;
+}
+
+.balloon1 {
+    position: relative;
+    display: inline-block;
+    margin: 1.5em 15px 1.5em 0;
+    padding: 7px 10px;
+    min-width: 120px;
+    max-width: 100%;
+    color: black;
+    font-size: 50px;
+    background: #e0edff;
+    border-radius: 15px;
+    top: 60px;
+    left: 250px;
+  }
+  
+  .balloon1:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-top: -15px;
+    border: 15px solid transparent;
+    border-left: 15px solid #e0edff;
+  }
+  
+  .balloon1 p {
+    margin: 0;
+    padding: 0;
+  }
+
+.image{
+    position: absolute;
+    top: 20px;
+    left: 900px;
+}
+
+.note{
+  position: relative;
+  top: -10px;
+  left: 270px;
+  font-size: 20px;
+  width: 300px;
+}
+
+select[neme="genre"]{
+  position: absolute;
+  top: 370px;
+  left: 270px;
+  font-size: 30px;
+  width: 500px;
+  height: auto;
+}
+
+.text{
+    position: absolute;
+    top: 450px;
+    left: 300px;
+}
+.quest-input{
+  width: 700px;
+  height: 300px;
+  font-size: 30px;
+}
+
+textarea{
+    resize: none;
+    font-size: 20px;
+}
+
+.register{
+  position: absolute;
+  top: 650px;
+  left: 60%;
+}
+
+#message{
+  position: relative;
+  top: 250px;
+  left: 35%;
+  color: rgb(255, 76, 76);
+}
+
+button[name=register]{
+  width: 80px;
+  height: 50px;
+  font-size: 25px;
+  background-color: rgb(100, 100, 100);
+  color: #ffffff;
+}
+
+button[name=back]{
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  width: 80px;
+  height: 50px;
+  font-size: 25px;
+  background-color: #5959ec;
+  color: #ffffff;
+}
+
+button[name=back]:hover{
+  background-color: rgb(35, 35, 220);
+}
+button[name=back]:active{
+  background-color: rgb(67, 67, 255);
+}
+

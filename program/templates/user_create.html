@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ユーザ作成</title>
+    <link rel="stylesheet" href="../static/css/create_user.css" />
+    <script src="../static/javascript/create_user.js"></script>
+</head>
+<body>
+    <form action="/create-success" method="get" id="tmp-form"></form>
+    <div class="main">
+    <h1 class="title">アカウントの新規登録</h1>
+    <div class="input-user-data-div">　　　　　ユーザID:<input type="textbox" name="id" id="id" class="input-user-data" placeholder="6文字～20文字" oninput="input_data_check()"></div>
+    <div class="input-user-data-div">　　　　　ユーザ名:<input type="textbox" name="name" id="name" class="input-user-data" placeholder="20文字以内" oninput="input_data_check()"></div>
+    <div class="input-user-data-div">　　　　パスワード:<input type="password" name="password1" id="password1" class="input-user-data" placeholder="8文字～20文字の英数字" oninput="input_data_check()"></div>
+    <div class="input-user-data-div">パスワード(確認用):<input type="password" name="password2" id="password2" class="input-user-data" placeholder="8文字～20文字の英数字" oninput="input_data_check()"></div>
+    <div class="input-user-data-div"><input type="checkbox" name="agreement" id="agreement" value="1" class="input-user-data" checked>平均評価点が85点以上の回答を公開する</div>
+    <p class="error-message-class" id="error-message"></p>
+    <button type="submit" class="btn cancel-btn" onclick="history.back()">キャンセル</button>
+    <button type="submit" onclick="send_data()" class="btn register-btn" id="register-btn-id" disabled>登録</button>
+    </div>
+</body>
+</html>

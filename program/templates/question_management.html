@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <title>登録質問管理画面</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/question_management.css">
+</head>
+<body>
+  <div class="main">
+    <form action="/main-disp">
+      <button type="submit" name="back">戻る</button>
+    </form>
+    <div class="balloon1">
+      <p>私にしてほしい質問を<br>入力してください</p>
+    </div>
+    <div class="image">
+      <img src="../static/img/ai_search.png">
+      <script src="../static/javascript/question_management.js"></script>
+    </div>
+    <p class="note">ジャンルを選択してください</p>
+    <select neme="genre" id="genre">
+      {% for genre in genre_list%}
+        <option>{{genre}}</option>
+      {% endfor %}
+    </select>
+    <div class="text">
+      <textarea id="quest-text" name="textarea" cols="80" rows="8" oninput="question_register()"></textarea>
+    </div>
+    <div class="register">
+      <button type="submit" name="register" id="register" onclick="register_question_text()" disabled>登録</button>
+    </div>
+    <br>
+    <p class="note" id="message"></p>
+  </div>
+</body>
+</html>
