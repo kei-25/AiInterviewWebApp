@@ -1,0 +1,286 @@
+ユーザテーブル
+create table users(
+uid varchar(20) not null primary key,uname varchar(20) not null,pass varchar(20) not null);
+
+質問テーブル
+create table quests(
+qid int not null primary key auto_increment,qtext varchar(100) not null,
+genre varchar(20),uid varchar(20), dqtext boolean not null,foreign key uid (uid) references users(uid));
+
+履歴テーブル
+create table historys(
+qid int not null,uid varchar(20) not null,
+iid int not null,
+conclusion varchar(400) not null,value1 int not null,
+wording varchar(400) not null,value2 int not null,
+logical varchar(400)not null,value3 int not null,
+answer varchar(400) not null,
+primary key(qid,uid,iid),
+foreign key qid (qid) references quests (qid),
+foreign key uid (uid) references users (uid));
+
+以下質問テーブルの初期登録データ
+insert into quests (qtext,genre) values(
+"自己紹介をしてください","自己紹介・基本情報");
+
+insert into quests (qtext,genre) values(
+"自己PRをしてください","自己紹介・基本情報");
+
+insert into quests (qtext,genre) values(
+"出身地や大学、専攻について教えてください","自己紹介・基本情報");
+
+insert into quests (qtext,genre) values(
+"なぜその大学・学部に進学したのですか？","自己紹介・基本情報");
+
+insert into quests (qtext,genre) values(
+"就活の軸を教えてください","自己紹介・基本情報");
+
+insert into quests (qtext,genre) values(
+"趣味や特技は何ですか？","自己紹介・基本情報");
+
+insert into quests (qtext,genre) values(
+"自分の特徴や強みを教えてください","自己紹介・基本情報");
+
+insert into quests (qtext,genre) values(
+"最近興味を持ったことはありますか？","自己紹介・基本情報");
+
+insert into quests (qtext,genre) values(
+"どのような学生生活を送ってきましたか？","自己紹介・基本情報");
+
+insert into quests (qtext,genre) values(
+"人生で影響を受けたエピソードを教えてください","自己紹介・基本情報");
+
+insert into quests (qtext,genre) values(
+"親しい友人や家族から見たあなたの特徴を教えてください","自己紹介・基本情報");
+
+insert into quests (qtext,genre) values(
+"最近の気になるニュースや話題を教えてください","自己紹介・基本情報");
+
+insert into quests (qtext,genre) values(
+"あなたを色(または物や動物)にたとえると何ですか？","自己紹介・基本情報");
+
+insert into quests (qtext,genre) values(
+"当社を志望した理由を教えてください","志望動機・企業分析");
+
+insert into quests (qtext,genre) values(
+"当社に関する情報収集はどのように行いましたか？","志望動機・企業分析");
+
+insert into quests (qtext,genre) values(
+"当社のどういった点に魅力を感じましたか？","志望動機・企業分析");
+
+insert into quests (qtext,genre) values(
+"他社と比較し、なぜ当社を選んだのですか？","志望動機・企業分析");
+
+insert into quests (qtext,genre) values(
+"入社後にやりたいことはありますか？","志望動機・企業分析");
+
+insert into quests (qtext,genre) values(
+"当社のサービス(製品)の魅力はなんだと思いますか？","志望動機・企業分析");
+
+insert into quests (qtext,genre) values(
+"当社のビジョンや理念に共感する部分はありますか？","志望動機・企業分析");
+
+insert into quests (qtext,genre) values(
+"当社の業界や市場に対してどのように思っていますか？","志望動機・企業分析");
+
+insert into quests (qtext,genre) values(
+"当社の課題や競合状況について思うことがあれば教えてください","志望動機・企業分析");
+
+insert into quests (qtext,genre) values(
+"当社に入社してどのような価値を生み出したいと考えていますか？","志望動機・企業分析");
+
+insert into quests (qtext,genre) values(
+"将来的にどのような役割やポジションに就きたいですか？","志望動機・企業分析");
+
+insert into quests (qtext,genre) values(
+"競合と比べて、当社はどのような点で差別化されていると思いますか？","志望動機・企業分析");
+
+insert into quests (qtext,genre) values(
+"あなたの経験やスキルをどのように当社で活かせると考えていますか？","志望動機・企業分析");
+
+
+insert into quests (qtext,genre) values(
+"あなたの長所を教えてください","長所・短所");
+
+insert into quests (qtext,genre) values(
+"自身の短所や課題に感じる点はありますか？","長所・短所");
+
+insert into quests (qtext,genre) values(
+"短所を克服するために取り組んだ経験はありますか？","長所・短所");
+
+insert into quests (qtext,genre) values(
+"チームワークにおいてどのようなポジションが多いですか？","長所・短所");
+
+insert into quests (qtext,genre) values(
+"長所短所を踏まえて自己成長のために取り組んでいることがあれば教えてください","長所・短所");
+
+insert into quests (qtext,genre) values(
+"長所がどのようなシチュエーションで発揮されると思いますか？","長所・短所");
+
+insert into quests (qtext,genre) values(
+"人からフィードバックを受けた際にどのように対応しますか？","長所・短所");
+
+insert into quests (qtext,genre) values(
+"人と協力する際に自分の短所をどのようにカバーしますか？","長所・短所");
+
+insert into quests (qtext,genre) values(
+"あなたの長所や強みが培われた経験や出来事を教えてください","長所・短所");
+
+insert into quests (qtext,genre) values(
+"誰にも負けないと思う自分の強みは何ですか？","長所・短所");
+
+insert into quests (qtext,genre) values(
+"学生と社会人の違いは何だと思いますか？","長所・短所");
+
+insert into quests (qtext,genre) values(
+"学生時代に力を入れた活動や経験を教えてください","ガクチカ");
+
+insert into quests (qtext,genre) values(
+"今までで一番嬉しかったことは何ですか？","ガクチカ");
+
+insert into quests (qtext,genre) values(
+"チームで何かを成し遂げた経験はありますか？","ガクチカ");
+
+insert into quests (qtext,genre) values(
+"チームメンバーの異なるスキルをどのように活かしましたか？","ガクチカ");
+
+insert into quests (qtext,genre) values(
+"（失敗した取り組みに対して）反省点を挙げるとしたら何がありますか？","ガクチカ");
+
+insert into quests (qtext,genre) values(
+"ITに関する専門的なスキルや知識はありますか？","専門知識・スキル");
+
+insert into quests (qtext,genre) values(
+"専門知識や経験をどのような場面で活かしましたか？","専門知識・スキル");
+
+insert into quests (qtext,genre) values(
+"専門知識を深めるために行っていることはありますか？","専門知識・スキル");
+
+insert into quests (qtext,genre) values(
+"専門知識やスキルを活かして、チーム内で課題解決を行った経験を教えてください","専門知識・スキル");
+
+insert into quests (qtext,genre) values(
+"知識や経験を他分野で応用できると思いますか？","専門知識・スキル");
+
+insert into quests (qtext,genre) values(
+"スキル向上において克服した難題があれば教えてください","専門知識・スキル");
+
+insert into quests (qtext,genre) values(
+"新たなスキルを学ぶ際、どのような学習プランを立てることが多いですか？","専門知識・スキル");
+
+insert into quests (qtext,genre) values(
+"これまでに印象的なチームワークはありましたか？","チームワーク・コミュニケーション");
+
+insert into quests (qtext,genre) values(
+"チームでの課題や対立はありましたか？またどのように解決しましたか？","チームワーク・コミュニケーション");
+
+insert into quests (qtext,genre) values(
+"チームプロジェクトでのリーダーシップを発揮した経験があれば、そこから学んだことを教えてください","チームワーク・コミュニケーション");
+
+insert into quests (qtext,genre) values(
+"異なる意見を受け入れつつ、効果的な意思決定を行った経験を教えてください","チームワーク・コミュニケーション");
+
+insert into quests (qtext,genre) values(
+"コミュニケーションの際に気を付けているポイントはありますか？","チームワーク・コミュニケーション");
+
+insert into quests (qtext,genre) values(
+"チームでの衝突を解決する際のアプローチを教えてください","チームワーク・コミュニケーション");
+
+insert into quests (qtext,genre) values(
+"チームの成功に貢献した際の経験について教えてください","チームワーク・コミュニケーション");
+
+insert into quests (qtext,genre) values(
+"チームの一員として、他のメンバーをどのように活かしてきたか教えてください","チームワーク・コミュニケーション");
+
+insert into quests (qtext,genre) values(
+"相手の意見を尊重しながらコミュニケーションする方法を教えてください","チームワーク・コミュニケーション");
+
+insert into quests (qtext,genre) values(
+"コミュニケーション能力を向上させるために取り組んだことはありますか？","チームワーク・コミュニケーション");
+
+insert into quests (qtext,genre) values(
+"一緒に働くにあたり、どんな人と仕事がしたいですか？","チームワーク・コミュニケーション");
+
+insert into quests (qtext,genre) values(
+"苦手な人はどのような人ですか？また、どのように付き合いますか？","チームワーク・コミュニケーション");
+
+insert into quests (qtext,genre) values(
+"将来のキャリアビジョンや目標を教えてください","将来・キャリアビジョン");
+
+insert into quests (qtext,genre) values(
+"5年後や10年後にどうなっていたいですか？","将来・キャリアビジョン");
+
+insert into quests (qtext,genre) values(
+"弊社の中で興味のある業務や部署はありますか？","将来・キャリアビジョン");
+
+insert into quests (qtext,genre) values(
+"希望でない部署への配属が決まったらどうしますか？","将来・キャリアビジョン");
+
+insert into quests (qtext,genre) values(
+"将来の目標を達成するためにどのような業界や企業に関心がありますか？","将来・キャリアビジョン");
+
+insert into quests (qtext,genre) values(
+"将来のビジョンについて、個人的な成長だけでなく社会への影響をどのように考えていますか？","将来・キャリアビジョン");
+
+insert into quests (qtext,genre) values(
+"将来的にリーダーポジションに就く際、どのようなリーダーシップを目指しますか？","将来・キャリアビジョン");
+
+insert into quests (qtext,genre) values(
+"働く上で大事なことは何ですか？","将来・キャリアビジョン");
+
+insert into quests (qtext,genre) values(
+"他の人々や組織にどのように影響を与えたいと考えていますか？","将来・キャリアビジョン");
+
+insert into quests (qtext,genre) values(
+"自身のキャリアパスやビジョンにおいて、過去の経験がどのように影響していますか？","将来・キャリアビジョン");
+
+insert into quests (qtext,genre) values(
+"理想のキャリアプランを実現するために、どのような学習や成長を継続して行っていますか？","将来・キャリアビジョン");
+
+insert into quests (qtext,genre) values(
+"複雑な課題に取り組む際のアプローチを教えてください","思考力");
+
+insert into quests (qtext,genre) values(
+"ストレスが溜まった際のリフレッシュ方法はありますか？","思考力");
+
+insert into quests (qtext,genre) values(
+"これまでで一番大きな成功体験はなんですか？成功した理由も合わせてお話しください","思考力");
+
+insert into quests (qtext,genre) values(
+"未知の分野や前例のない問題にどのようにアプローチしますか？","思考力");
+
+insert into quests (qtext,genre) values(
+"判断力を養うための方法やポイントを説明してください","思考力");
+
+insert into quests (qtext,genre) values(
+"情報の収集と分析において重要だと思うことは何ですか？","思考力");
+
+insert into quests (qtext,genre) values(
+"複数の選択肢から最適なものを選ぶ際の基準を教えてください","思考力");
+
+insert into quests (qtext,genre) values(
+"クリティカルシンキングを養うためにどのような取り組みをしていますか？","思考力");
+
+insert into quests (qtext,genre) values(
+"意思決定をする際に重視する価値観や要因は何ですか？","思考力");
+
+insert into quests (qtext,genre) values(
+"複雑な状況で冷静な判断をするために心掛けていることは何ですか？","思考力");
+
+insert into quests (qtext,genre) values(
+"問題が発生した際に、解決に導くためのプロセスを教えてください","思考力");
+
+insert into quests (qtext,genre) values(
+"他社の選考状況や進捗について話すことはできますか？","他社の選考状況");
+
+insert into quests (qtext,genre) values(
+"当社への志望度はどれくらいですか？","他社の選考状況");
+
+insert into quests (qtext,genre) values(
+"他社で興味のある企業はどこですか？","他社の選考状況");
+
+insert into quests (qtext,genre) values(
+"特徴的な他社の選考はありましたか？","他社の選考状況");
+
+insert into quests (qtext,genre) values(
+"他社の選考を通じて学んだことや気付いたことは何ですか？","他社の選考状況");

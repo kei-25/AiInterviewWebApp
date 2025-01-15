@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/interview_result.css">
+    <title>面接結果一覧</title>
+</head>
+<body>
+    <div class="header">
+      <h1 class="title">面接結果</h1>
+    </div>
+    <form action="/main-disp">
+      <button type="submit" name="name" class="back">メイン画面へ</button>
+    </form>
+    <table border="1" width="100%">
+      <tbody>
+        <tr>
+          <th>質問内容</th>
+          <th>回答内容</th>
+          <th>結論第一</th>
+          <th>言葉遣い</th>
+          <th>論理的</th>
+        </tr>
+        {% for data in result_list %}
+          <tr>
+            <td>{{data[0]}}</td>
+            <td>{{data[1]}}</td>
+            <td>{{data[3]}}点<br>{{data[2]}}</td>
+            <td>{{data[5]}}点<br>{{data[4]}}</td>
+            <td>{{data[7]}}点<br>{{data[6]}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

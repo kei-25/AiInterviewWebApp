@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>リアルタイムテキスト処理</title>
+    <link rel="stylesheet" href="../static/css/interview.css" />
+    <script src="../static/javascript/interview.js"></script>
+</head>
+
+<body>
+    <div class="main">
+        <!-- javascriptへデータを送るための要素 -->
+        <div id="setting-data" 
+            speak = "{{ speak }}";
+            mic = "{{ mic }}";
+            generat = "{{ generat }}";
+            quest_num = "{{ quest_num }}";
+            question_text = "{{ question_text }}";
+            qid = "{{ qid }}";>
+        </div>
+
+        <h1 style="text-align: center;" id="leftover_num">残りN問</h1>
+        <form action='/interview-result' id="transition-form">
+            <button class="end-btn" id="end-btn">終了する</button>
+        </form>
+
+        <div class="speech-bubble ai-speech-bubble text">
+            <div class="text_box_div" id="question"></div>
+        </div>
+        <div class="speech-bubble user-speech-bubble text">
+            <div class="user-speak-text text_box_div" id="user-speak-text"></div>
+        </div>
+
+        <img src="../static/img/ai_character.png" class="ai-img">
+        <img src="../static/img/就活_ガッツポーズ.jpg" class="user-img">
+
+        <div class="pulse-container" id="pulse-container">  
+            <div class="pulse-bubble pulse-bubble-1"></div>
+            <div class="pulse-bubble pulse-bubble-2"></div>
+            <div class="pulse-bubble pulse-bubble-3"></div>
+        </div>
+        <br>
+        <textarea class="input-text text" id="input-text" placeholder="テキストを入力してください"></textarea>
+        
+        <button class="send-btn" id="send-btn" onclick="send_text()">テキストを送信</button>
+
+        <div class="mic-btn" id="mic-btn">
+            <div class="loader" id="loader">
+                <div class="loader-inner ball-scale-multiple">
+                <div></div>
+                <div></div>
+                <div></div>
+                </div>
+            </div>
+            <button onclick="toggle_recognition()"><img src="../static/img/maiku.png" class="mic-btn-img"></button>
+        </div>
+    </div>
+</body>
+
+</html>

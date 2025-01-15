@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>メイン画面</title>
+    <link rel="stylesheet" href="../static/css/main.css" />
+</head>
+<body>
+    <h1 class="title">AI面接アプリ</h1>
+    <p class="note">総合評価点が85点以上の回答</p>
+    {% if high_score_answer_list_len == 0 %}
+      <p class="high-score-answer-none-message">現在総合評価点が85点以上の回答はありません</p>
+    {% else %}
+      <div class="high_score_box">
+        <table border="1">
+            <tbody>
+              <tr>
+                <th>質問内容</th>
+                <th>回答内容</th>
+                <th>平均評価点</th>
+              </tr>
+              {% for data in high_score_answer_list %}
+                <tr>
+                  <td>{{data[0]}}</td>
+                  <td>{{data[1]}}</td>
+                  <td>{{data[2]}}点</td>
+                </tr>
+              {% endfor %}
+              </tbody>
+          </table>
+      </div>
+    {% endif %}
+    <form action="question-management" method="post">
+        <button type="submit" class="question">質問登録画面へ</button>
+    </form>
+    <form action='/ai-interview-setting'>
+        <button type="submit" class="mensetu">面接へ</button>
+    </form>
+    <form action='/answer-history'>
+        <button type="submit" class="rireki">履歴画面へ</button>
+    </form>
+</body>
+</html>

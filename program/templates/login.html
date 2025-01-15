@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ログイン</title>
+    <link rel="stylesheet" href="../static/css/login.css" />
+    <script src="../static/javascript/login.js"></script>
+</head>
+<body>
+    <div class="main">
+        <form action='/main-disp' method="post" id="tmp-form"></form>
+            <h1 class="title">アカウントログイン</h1>
+            <div class="input-user-data-div">　ユーザID:<input type="textbox" name="id" id="id" class="input-user-data"></div>
+            <div class="input-user-data-div">パスワード:<input type="password" name="password" id="password" class="input-user-data"></div>
+            <div class="error-message" id="error-message"></div>
+            <button type="submit" class="btn rogin-btn" onclick="data_check()">ログイン</button>
+
+    <form action='/create-user' method="get">
+        アカウントをお持ちでない方はこちら→<button type="submit">新規登録</button>
+    </form>
+    </div>
+</body>
+</html>

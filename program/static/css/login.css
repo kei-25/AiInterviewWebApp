@@ -1,0 +1,40 @@
+.main{
+    margin: auto;
+    text-align: center;
+}
+
+.title{
+    margin-top: 12%;
+    color: rgb(88, 88, 88);
+}
+
+.input-user-data{
+    margin: 10px;
+}
+
+.input-user-data-div{
+    color: rgb(35, 35, 35);
+}
+
+.btn{
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    margin: 20px;
+}
+
+.rogin-btn{
+    background-color: rgb(67, 67, 255);
+}
+.rogin-btn:hover{
+    background-color: rgb(35, 35, 220);
+}
+.rogin-btn:active{
+    background-color: rgb(67, 67, 255);
+}
+
+.error-message{
+    color: red;
+}

@@ -1,0 +1,201 @@
+.main{
+    margin: auto;
+    text-align: center;
+}
+
+h1{
+    color: rgb(88, 88, 88);
+}
+
+.note-1{
+    position: relative;
+    left: -180px;
+    top: -10px;
+}
+
+.note-2{
+    position: relative;
+    top: -20px;
+}
+
+.note-3{
+    position: relative;
+    top: -20px;
+}
+
+.note-4{
+    font-size: 20px;
+}
+
+.toggle-div{
+    height: 70px; 
+}
+
+.toggle-button-1 {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #dddddd;
+    cursor: pointer;
+    transition: background-color .4s;
+    top: -70px;
+    left: 245px;
+}
+
+.toggle-button-1:has(:checked) {
+    background-color: #4bd865;
+}
+
+.toggle-button-1::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgb(0 0 0 / 20%);
+    background-color: #fff;
+    content: '';
+    transition: left .4s;
+}
+
+.toggle-button-1:has(:checked)::after {
+    left: 50px;
+}
+
+.toggle-button-1 input {
+    display: none;
+}
+
+.genre-group{
+    position: relative;
+    left: 25%;
+    width: 920px;
+    height: 200px;
+}
+
+.genre-check{
+    transform: scale(1.5);
+    margin: 5px;
+}
+
+.genre1{
+    position: absolute;
+    left: 90px;
+    font-size: 20px;
+}
+.genre2{
+    position: absolute;
+    left: 350px;
+    font-size: 20px;
+}
+.genre3{
+    position: absolute;
+    left: 570px;
+    font-size: 20px;
+}
+
+.quest-list-box{
+    background-color: #4bd865;
+    width: 1200px;
+    height: 400px;
+    margin: 0 auto;
+    overflow: scroll;
+}
+
+.quest-checkbox{
+    transform: scale(2.0);
+    margin-left: 20px;
+}
+
+.quest-set{
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 40px;
+    background-color: #dddddd;
+    border-top: 1px solid #2f2f2f;
+    border-bottom: 1px solid #2f2f2f;
+    font-size: 20px;
+    color: rgb(60, 60, 60);
+}
+
+.interview-start-btn{
+    background-color: rgb(89, 89, 236);
+    width: 240px;
+    height: 80px;
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    margin: 40px;
+}
+
+.quest-num::-webkit-inner-spin-button,
+.quest-num::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"]{
+    -moz-appearance:textfield;
+    appearance: textfield;
+}
+
+.quest-num-btn{
+    width: 54px;
+    height: 54px;
+    font-size: 40px;
+    position: relative;
+    top: 1px;
+    color: rgb(79, 79, 79);
+}
+
+.minus{
+    left: 7px;
+}
+.plus{
+    left: -6px;
+}
+
+.quest-num{
+    color: rgb(79, 79, 79);
+    text-align: center;
+    font-size: 35px;
+    padding: 0px;
+    width: 50px;
+    height: 50px;
+}
+
+.quest-num-div{
+    position: relative;
+    top: 20px;
+    height: 70px;
+}
+
+.error-message{
+    position: relative;
+    top: 35px;
+    font-size: 20px;
+    color: rgb(255, 81, 81);
+}
+
+.back{
+    position: relative;
+    left: -400px;
+    top: -80px;
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    margin: 20px;
+    background-color: rgb(67, 67, 255);
+}
+.back:hover{
+    background-color: rgb(35, 35, 220);
+}
+.back:active{
+    background-color: rgb(67, 67, 255);
+}
